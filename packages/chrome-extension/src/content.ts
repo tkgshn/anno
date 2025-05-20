@@ -14,12 +14,12 @@ import {
 
 export type ContentMessage =
   | {
-      type: "mark";
-    }
+    type: "mark";
+  }
   | {
-      type: "inject";
-      injectionData: InjectionData;
-    };
+    type: "inject";
+    injectionData: InjectionData;
+  };
 
 export interface InjectionData {
   annoProjectName: string;
@@ -92,7 +92,7 @@ const mark = async () => {
               : `[${metadata.url}]`
             : metadata.title,
           metadata.exif_normalized?.latitude &&
-            `[N${metadata.exif_normalized.latitude},E${metadata.exif_normalized.longitude},Z17]`,
+          `[N${metadata.exif_normalized.latitude},E${metadata.exif_normalized.longitude},Z17]`,
         ].flatMap((data) => (typeof data === "string" ? data.split("\n") : []))
       );
     } else {
@@ -134,6 +134,20 @@ const mark = async () => {
       }
     }
 
+    // designdoc: クリップ時に日付と[public.icon]を追加する
+    /**
+     * クリップ時のヘッダー情報に日付と[public.icon]を追加する
+     * - [YYYY-MM-DD]形式の日付をScrapbox表記で追加
+     * - [public.icon]を追加
+     * - 既存の#annopageリンクの直前に挿入
+     */
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const dateBracket = `[${yyyy}-${mm}-${dd}]`;
+    headerLines.push(dateBracket);
+    headerLines.push('[public.icon]');
     headerLines.push(
       `#annopage [${decodeURI(getAnnolink(getCanonicalURL()))}]`,
       ""
@@ -239,9 +253,9 @@ chrome.runtime.onMessage.addListener(async (contentMessage: ContentMessage) => {
             const end =
               textRange.start.textNode === textRange.end.textNode
                 ? {
-                    textNode: splittedStartTextNode,
-                    offset: textRange.end.offset - textRange.start.offset,
-                  }
+                  textNode: splittedStartTextNode,
+                  offset: textRange.end.offset - textRange.start.offset,
+                }
                 : textRange.end;
             end.textNode.splitText(end.offset);
 
@@ -401,14 +415,12 @@ chrome.runtime.onMessage.addListener(async (contentMessage: ContentMessage) => {
                 scrollableAncestorElement.clientHeight;
 
               barmapElement.style.display = isVisible ? "block" : "none";
-              barmapElement.style.left = `${
-                scrollableAncestorDOMRect.left +
+              barmapElement.style.left = `${scrollableAncestorDOMRect.left +
                 scrollableAncestorElement.clientWidth -
                 16
-              }px`;
-              barmapElement.style.top = `${
-                scrollableAncestorDOMRect.top + clientTop - 16
-              }px`;
+                }px`;
+              barmapElement.style.top = `${scrollableAncestorDOMRect.top + clientTop - 16
+                }px`;
               barmapElement.style.height = `${Math.max(
                 clientBottom - clientTop,
                 4
