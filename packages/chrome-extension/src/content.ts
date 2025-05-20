@@ -137,15 +137,15 @@ const mark = async () => {
     // designdoc: クリップ時に日付と[public.icon]を追加する
     /**
      * クリップ時のヘッダー情報に日付と[public.icon]を追加する
-     * - [YYYY-MM-DD]形式の日付をScrapbox表記で追加
+     * - [YYYY/MM/DD]形式の日付をScrapbox表記で追加（0埋めなし）
      * - [public.icon]を追加
      * - 既存の#annopageリンクの直前に挿入
      */
     const today = new Date();
     const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    const dateBracket = `[${yyyy}-${mm}-${dd}]`;
+    const mm = today.getMonth() + 1; // 0埋めしない
+    const dd = today.getDate();      // 0埋めしない
+    const dateBracket = `[${yyyy}/${mm}/${dd}]`;
     headerLines.push(dateBracket);
     headerLines.push('[public.icon]');
     headerLines.push(
