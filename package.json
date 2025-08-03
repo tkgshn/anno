@@ -20,6 +20,7 @@
     "packages/annopatch",
     "packages/chrome-extension",
     "packages/react-safe-translation",
+    "packages/safari-extension",
     "packages/scrapbox-loader",
     "packages/text-quote-injection"
   ]

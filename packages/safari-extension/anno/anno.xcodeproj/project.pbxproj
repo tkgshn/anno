@@ -1,0 +1,1019 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2928B2622E3F41AF00B35BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928B2612E3F41AF00B35BFC /* AppDelegate.swift */; };
+		2928B2642E3F41AF00B35BFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928B2632E3F41AF00B35BFC /* SceneDelegate.swift */; };
+		2928B2672E3F41AF00B35BFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2652E3F41AF00B35BFC /* LaunchScreen.storyboard */; };
+		2928B26A2E3F41AF00B35BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2682E3F41AF00B35BFC /* Main.storyboard */; };
+		2928B2732E3F41AF00B35BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928B2722E3F41AF00B35BFC /* AppDelegate.swift */; };
+		2928B2762E3F41AF00B35BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2742E3F41AF00B35BFC /* Main.storyboard */; };
+		2928B27E2E3F41AF00B35BFC /* anno Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2928B27D2E3F41AF00B35BFC /* anno Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2928B2882E3F41AF00B35BFC /* anno Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2928B2872E3F41AF00B35BFC /* anno Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2928B28E2E3F41AF00B35BFC /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2512E3F41AE00B35BFC /* Main.html */; };
+		2928B28F2E3F41AF00B35BFC /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2512E3F41AE00B35BFC /* Main.html */; };
+		2928B2902E3F41AF00B35BFC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2532E3F41AE00B35BFC /* Icon.png */; };
+		2928B2912E3F41AF00B35BFC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2532E3F41AE00B35BFC /* Icon.png */; };
+		2928B2922E3F41AF00B35BFC /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2542E3F41AE00B35BFC /* Style.css */; };
+		2928B2932E3F41AF00B35BFC /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2542E3F41AE00B35BFC /* Style.css */; };
+		2928B2942E3F41AF00B35BFC /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2552E3F41AE00B35BFC /* Script.js */; };
+		2928B2952E3F41AF00B35BFC /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2552E3F41AE00B35BFC /* Script.js */; };
+		2928B2962E3F41AF00B35BFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928B2562E3F41AE00B35BFC /* ViewController.swift */; };
+		2928B2972E3F41AF00B35BFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928B2562E3F41AE00B35BFC /* ViewController.swift */; };
+		2928B2982E3F41AF00B35BFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2572E3F41AF00B35BFC /* Assets.xcassets */; };
+		2928B2992E3F41AF00B35BFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2572E3F41AF00B35BFC /* Assets.xcassets */; };
+		2928B29A2E3F41AF00B35BFC /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928B2592E3F41AF00B35BFC /* SafariWebExtensionHandler.swift */; };
+		2928B29B2E3F41AF00B35BFC /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928B2592E3F41AF00B35BFC /* SafariWebExtensionHandler.swift */; };
+		2928B2BC2E3F41AF00B35BFC /* gyanno.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2AD2E3F41AF00B35BFC /* gyanno.js */; };
+		2928B2BD2E3F41AF00B35BFC /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2AE2E3F41AF00B35BFC /* popup.js */; };
+		2928B2BE2E3F41AF00B35BFC /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2AF2E3F41AF00B35BFC /* background.js */; };
+		2928B2BF2E3F41AF00B35BFC /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B02E3F41AF00B35BFC /* popup.html */; };
+		2928B2C02E3F41AF00B35BFC /* annotation.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B12E3F41AF00B35BFC /* annotation.js */; };
+		2928B2C12E3F41AF00B35BFC /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B22E3F41AF00B35BFC /* options.js */; };
+		2928B2C22E3F41AF00B35BFC /* anno-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B32E3F41AF00B35BFC /* anno-1024.png */; };
+		2928B2C32E3F41AF00B35BFC /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B42E3F41AF00B35BFC /* manifest.json */; };
+		2928B2C42E3F41AF00B35BFC /* scrapboxContent.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B52E3F41AF00B35BFC /* scrapboxContent.js */; };
+		2928B2C52E3F41AF00B35BFC /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B62E3F41AF00B35BFC /* options.html */; };
+		2928B2C62E3F41AF00B35BFC /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B72E3F41AF00B35BFC /* content.js */; };
+		2928B2C72E3F41AF00B35BFC /* scrapboxUserScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B82E3F41AF00B35BFC /* scrapboxUserScript.js */; };
+		2928B2C82E3F41AF00B35BFC /* anno.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B92E3F41AF00B35BFC /* anno.png */; };
+		2928B2C92E3F41AF00B35BFC /* anno-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2BA2E3F41AF00B35BFC /* anno-512.png */; };
+		2928B2CA2E3F41AF00B35BFC /* annotation.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2BB2E3F41AF00B35BFC /* annotation.html */; };
+		2928B2CB2E3F41AF00B35BFC /* gyanno.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2AD2E3F41AF00B35BFC /* gyanno.js */; };
+		2928B2CC2E3F41AF00B35BFC /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2AE2E3F41AF00B35BFC /* popup.js */; };
+		2928B2CD2E3F41AF00B35BFC /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2AF2E3F41AF00B35BFC /* background.js */; };
+		2928B2CE2E3F41AF00B35BFC /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B02E3F41AF00B35BFC /* popup.html */; };
+		2928B2CF2E3F41AF00B35BFC /* annotation.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B12E3F41AF00B35BFC /* annotation.js */; };
+		2928B2D02E3F41AF00B35BFC /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B22E3F41AF00B35BFC /* options.js */; };
+		2928B2D12E3F41AF00B35BFC /* anno-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B32E3F41AF00B35BFC /* anno-1024.png */; };
+		2928B2D22E3F41AF00B35BFC /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B42E3F41AF00B35BFC /* manifest.json */; };
+		2928B2D32E3F41AF00B35BFC /* scrapboxContent.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B52E3F41AF00B35BFC /* scrapboxContent.js */; };
+		2928B2D42E3F41AF00B35BFC /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B62E3F41AF00B35BFC /* options.html */; };
+		2928B2D52E3F41AF00B35BFC /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B72E3F41AF00B35BFC /* content.js */; };
+		2928B2D62E3F41AF00B35BFC /* scrapboxUserScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B82E3F41AF00B35BFC /* scrapboxUserScript.js */; };
+		2928B2D72E3F41AF00B35BFC /* anno.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2B92E3F41AF00B35BFC /* anno.png */; };
+		2928B2D82E3F41AF00B35BFC /* anno-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2BA2E3F41AF00B35BFC /* anno-512.png */; };
+		2928B2D92E3F41AF00B35BFC /* annotation.html in Resources */ = {isa = PBXBuildFile; fileRef = 2928B2BB2E3F41AF00B35BFC /* annotation.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2928B27F2E3F41AF00B35BFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2928B24B2E3F41AE00B35BFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2928B27C2E3F41AF00B35BFC;
+			remoteInfo = "anno Extension (iOS)";
+		};
+		2928B2892E3F41AF00B35BFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2928B24B2E3F41AE00B35BFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2928B2862E3F41AF00B35BFC;
+			remoteInfo = "anno Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2928B2A12E3F41AF00B35BFC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2928B27E2E3F41AF00B35BFC /* anno Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B2A82E3F41AF00B35BFC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2928B2882E3F41AF00B35BFC /* anno Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2928B2522E3F41AE00B35BFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		2928B2532E3F41AE00B35BFC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		2928B2542E3F41AE00B35BFC /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		2928B2552E3F41AE00B35BFC /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		2928B2562E3F41AE00B35BFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2928B2572E3F41AF00B35BFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2928B2592E3F41AF00B35BFC /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		2928B25E2E3F41AF00B35BFC /* anno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2928B2612E3F41AF00B35BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2928B2632E3F41AF00B35BFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2928B2662E3F41AF00B35BFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2928B2692E3F41AF00B35BFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2928B26B2E3F41AF00B35BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2928B2702E3F41AF00B35BFC /* anno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2928B2722E3F41AF00B35BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2928B2752E3F41AF00B35BFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2928B2772E3F41AF00B35BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2928B2782E3F41AF00B35BFC /* anno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = anno.entitlements; sourceTree = "<group>"; };
+		2928B27D2E3F41AF00B35BFC /* anno Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "anno Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2928B2822E3F41AF00B35BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2928B2872E3F41AF00B35BFC /* anno Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "anno Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2928B28C2E3F41AF00B35BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2928B28D2E3F41AF00B35BFC /* anno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = anno.entitlements; sourceTree = "<group>"; };
+		2928B2AD2E3F41AF00B35BFC /* gyanno.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = gyanno.js; path = ../../dist/gyanno.js; sourceTree = "<group>"; };
+		2928B2AE2E3F41AF00B35BFC /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../dist/popup.js; sourceTree = "<group>"; };
+		2928B2AF2E3F41AF00B35BFC /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../dist/background.js; sourceTree = "<group>"; };
+		2928B2B02E3F41AF00B35BFC /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../dist/popup.html; sourceTree = "<group>"; };
+		2928B2B12E3F41AF00B35BFC /* annotation.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = annotation.js; path = ../../dist/annotation.js; sourceTree = "<group>"; };
+		2928B2B22E3F41AF00B35BFC /* options.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = options.js; path = ../../dist/options.js; sourceTree = "<group>"; };
+		2928B2B32E3F41AF00B35BFC /* anno-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "anno-1024.png"; path = "../../dist/anno-1024.png"; sourceTree = "<group>"; };
+		2928B2B42E3F41AF00B35BFC /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../dist/manifest.json; sourceTree = "<group>"; };
+		2928B2B52E3F41AF00B35BFC /* scrapboxContent.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = scrapboxContent.js; path = ../../dist/scrapboxContent.js; sourceTree = "<group>"; };
+		2928B2B62E3F41AF00B35BFC /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = ../../dist/options.html; sourceTree = "<group>"; };
+		2928B2B72E3F41AF00B35BFC /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = content.js; path = ../../dist/content.js; sourceTree = "<group>"; };
+		2928B2B82E3F41AF00B35BFC /* scrapboxUserScript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = scrapboxUserScript.js; path = ../../dist/scrapboxUserScript.js; sourceTree = "<group>"; };
+		2928B2B92E3F41AF00B35BFC /* anno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anno.png; path = ../../dist/anno.png; sourceTree = "<group>"; };
+		2928B2BA2E3F41AF00B35BFC /* anno-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "anno-512.png"; path = "../../dist/anno-512.png"; sourceTree = "<group>"; };
+		2928B2BB2E3F41AF00B35BFC /* annotation.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = annotation.html; path = ../../dist/annotation.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2928B25B2E3F41AF00B35BFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B26D2E3F41AF00B35BFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B27A2E3F41AF00B35BFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B2842E3F41AF00B35BFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2928B24A2E3F41AE00B35BFC = {
+			isa = PBXGroup;
+			children = (
+				2928B24F2E3F41AE00B35BFC /* Shared (App) */,
+				2928B2582E3F41AF00B35BFC /* Shared (Extension) */,
+				2928B2602E3F41AF00B35BFC /* iOS (App) */,
+				2928B2712E3F41AF00B35BFC /* macOS (App) */,
+				2928B2812E3F41AF00B35BFC /* iOS (Extension) */,
+				2928B28B2E3F41AF00B35BFC /* macOS (Extension) */,
+				2928B25F2E3F41AF00B35BFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2928B24F2E3F41AE00B35BFC /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				2928B2562E3F41AE00B35BFC /* ViewController.swift */,
+				2928B2572E3F41AF00B35BFC /* Assets.xcassets */,
+				2928B2502E3F41AE00B35BFC /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		2928B2502E3F41AE00B35BFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2928B2512E3F41AE00B35BFC /* Main.html */,
+				2928B2532E3F41AE00B35BFC /* Icon.png */,
+				2928B2542E3F41AE00B35BFC /* Style.css */,
+				2928B2552E3F41AE00B35BFC /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2928B2582E3F41AF00B35BFC /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				2928B2AC2E3F41AF00B35BFC /* Resources */,
+				2928B2592E3F41AF00B35BFC /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		2928B25F2E3F41AF00B35BFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2928B25E2E3F41AF00B35BFC /* anno.app */,
+				2928B2702E3F41AF00B35BFC /* anno.app */,
+				2928B27D2E3F41AF00B35BFC /* anno Extension.appex */,
+				2928B2872E3F41AF00B35BFC /* anno Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2928B2602E3F41AF00B35BFC /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				2928B2612E3F41AF00B35BFC /* AppDelegate.swift */,
+				2928B2632E3F41AF00B35BFC /* SceneDelegate.swift */,
+				2928B2652E3F41AF00B35BFC /* LaunchScreen.storyboard */,
+				2928B2682E3F41AF00B35BFC /* Main.storyboard */,
+				2928B26B2E3F41AF00B35BFC /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		2928B2712E3F41AF00B35BFC /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				2928B2722E3F41AF00B35BFC /* AppDelegate.swift */,
+				2928B2742E3F41AF00B35BFC /* Main.storyboard */,
+				2928B2772E3F41AF00B35BFC /* Info.plist */,
+				2928B2782E3F41AF00B35BFC /* anno.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		2928B2812E3F41AF00B35BFC /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				2928B2822E3F41AF00B35BFC /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		2928B28B2E3F41AF00B35BFC /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				2928B28C2E3F41AF00B35BFC /* Info.plist */,
+				2928B28D2E3F41AF00B35BFC /* anno.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		2928B2AC2E3F41AF00B35BFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2928B2AD2E3F41AF00B35BFC /* gyanno.js */,
+				2928B2AE2E3F41AF00B35BFC /* popup.js */,
+				2928B2AF2E3F41AF00B35BFC /* background.js */,
+				2928B2B02E3F41AF00B35BFC /* popup.html */,
+				2928B2B12E3F41AF00B35BFC /* annotation.js */,
+				2928B2B22E3F41AF00B35BFC /* options.js */,
+				2928B2B32E3F41AF00B35BFC /* anno-1024.png */,
+				2928B2B42E3F41AF00B35BFC /* manifest.json */,
+				2928B2B52E3F41AF00B35BFC /* scrapboxContent.js */,
+				2928B2B62E3F41AF00B35BFC /* options.html */,
+				2928B2B72E3F41AF00B35BFC /* content.js */,
+				2928B2B82E3F41AF00B35BFC /* scrapboxUserScript.js */,
+				2928B2B92E3F41AF00B35BFC /* anno.png */,
+				2928B2BA2E3F41AF00B35BFC /* anno-512.png */,
+				2928B2BB2E3F41AF00B35BFC /* annotation.html */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2928B25D2E3F41AF00B35BFC /* anno (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2928B2A22E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno (iOS)" */;
+			buildPhases = (
+				2928B25A2E3F41AF00B35BFC /* Sources */,
+				2928B25B2E3F41AF00B35BFC /* Frameworks */,
+				2928B25C2E3F41AF00B35BFC /* Resources */,
+				2928B2A12E3F41AF00B35BFC /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2928B2802E3F41AF00B35BFC /* PBXTargetDependency */,
+			);
+			name = "anno (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "anno (iOS)";
+			productReference = 2928B25E2E3F41AF00B35BFC /* anno.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2928B26F2E3F41AF00B35BFC /* anno (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2928B2A92E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno (macOS)" */;
+			buildPhases = (
+				2928B26C2E3F41AF00B35BFC /* Sources */,
+				2928B26D2E3F41AF00B35BFC /* Frameworks */,
+				2928B26E2E3F41AF00B35BFC /* Resources */,
+				2928B2A82E3F41AF00B35BFC /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2928B28A2E3F41AF00B35BFC /* PBXTargetDependency */,
+			);
+			name = "anno (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "anno (macOS)";
+			productReference = 2928B2702E3F41AF00B35BFC /* anno.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2928B27C2E3F41AF00B35BFC /* anno Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2928B29E2E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno Extension (iOS)" */;
+			buildPhases = (
+				2928B2792E3F41AF00B35BFC /* Sources */,
+				2928B27A2E3F41AF00B35BFC /* Frameworks */,
+				2928B27B2E3F41AF00B35BFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "anno Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "anno Extension (iOS)";
+			productReference = 2928B27D2E3F41AF00B35BFC /* anno Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2928B2862E3F41AF00B35BFC /* anno Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2928B2A52E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno Extension (macOS)" */;
+			buildPhases = (
+				2928B2832E3F41AF00B35BFC /* Sources */,
+				2928B2842E3F41AF00B35BFC /* Frameworks */,
+				2928B2852E3F41AF00B35BFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "anno Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "anno Extension (macOS)";
+			productReference = 2928B2872E3F41AF00B35BFC /* anno Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2928B24B2E3F41AE00B35BFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					2928B25D2E3F41AF00B35BFC = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					2928B26F2E3F41AF00B35BFC = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					2928B27C2E3F41AF00B35BFC = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					2928B2862E3F41AF00B35BFC = {
+						CreatedOnToolsVersion = 16.1;
+					};
+				};
+			};
+			buildConfigurationList = 2928B24E2E3F41AE00B35BFC /* Build configuration list for PBXProject "anno" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2928B24A2E3F41AE00B35BFC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2928B25F2E3F41AF00B35BFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2928B25D2E3F41AF00B35BFC /* anno (iOS) */,
+				2928B26F2E3F41AF00B35BFC /* anno (macOS) */,
+				2928B27C2E3F41AF00B35BFC /* anno Extension (iOS) */,
+				2928B2862E3F41AF00B35BFC /* anno Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2928B25C2E3F41AF00B35BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B2902E3F41AF00B35BFC /* Icon.png in Resources */,
+				2928B2672E3F41AF00B35BFC /* LaunchScreen.storyboard in Resources */,
+				2928B28E2E3F41AF00B35BFC /* Main.html in Resources */,
+				2928B2942E3F41AF00B35BFC /* Script.js in Resources */,
+				2928B2982E3F41AF00B35BFC /* Assets.xcassets in Resources */,
+				2928B26A2E3F41AF00B35BFC /* Main.storyboard in Resources */,
+				2928B2922E3F41AF00B35BFC /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B26E2E3F41AF00B35BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B2912E3F41AF00B35BFC /* Icon.png in Resources */,
+				2928B2932E3F41AF00B35BFC /* Style.css in Resources */,
+				2928B2762E3F41AF00B35BFC /* Main.storyboard in Resources */,
+				2928B2952E3F41AF00B35BFC /* Script.js in Resources */,
+				2928B2992E3F41AF00B35BFC /* Assets.xcassets in Resources */,
+				2928B28F2E3F41AF00B35BFC /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B27B2E3F41AF00B35BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B2CB2E3F41AF00B35BFC /* gyanno.js in Resources */,
+				2928B2D52E3F41AF00B35BFC /* content.js in Resources */,
+				2928B2D12E3F41AF00B35BFC /* anno-1024.png in Resources */,
+				2928B2D02E3F41AF00B35BFC /* options.js in Resources */,
+				2928B2CE2E3F41AF00B35BFC /* popup.html in Resources */,
+				2928B2D22E3F41AF00B35BFC /* manifest.json in Resources */,
+				2928B2CF2E3F41AF00B35BFC /* annotation.js in Resources */,
+				2928B2D92E3F41AF00B35BFC /* annotation.html in Resources */,
+				2928B2CD2E3F41AF00B35BFC /* background.js in Resources */,
+				2928B2D82E3F41AF00B35BFC /* anno-512.png in Resources */,
+				2928B2D42E3F41AF00B35BFC /* options.html in Resources */,
+				2928B2D72E3F41AF00B35BFC /* anno.png in Resources */,
+				2928B2D32E3F41AF00B35BFC /* scrapboxContent.js in Resources */,
+				2928B2D62E3F41AF00B35BFC /* scrapboxUserScript.js in Resources */,
+				2928B2CC2E3F41AF00B35BFC /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B2852E3F41AF00B35BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B2BC2E3F41AF00B35BFC /* gyanno.js in Resources */,
+				2928B2C62E3F41AF00B35BFC /* content.js in Resources */,
+				2928B2C22E3F41AF00B35BFC /* anno-1024.png in Resources */,
+				2928B2C12E3F41AF00B35BFC /* options.js in Resources */,
+				2928B2BF2E3F41AF00B35BFC /* popup.html in Resources */,
+				2928B2C32E3F41AF00B35BFC /* manifest.json in Resources */,
+				2928B2C02E3F41AF00B35BFC /* annotation.js in Resources */,
+				2928B2CA2E3F41AF00B35BFC /* annotation.html in Resources */,
+				2928B2BE2E3F41AF00B35BFC /* background.js in Resources */,
+				2928B2C92E3F41AF00B35BFC /* anno-512.png in Resources */,
+				2928B2C52E3F41AF00B35BFC /* options.html in Resources */,
+				2928B2C82E3F41AF00B35BFC /* anno.png in Resources */,
+				2928B2C42E3F41AF00B35BFC /* scrapboxContent.js in Resources */,
+				2928B2C72E3F41AF00B35BFC /* scrapboxUserScript.js in Resources */,
+				2928B2BD2E3F41AF00B35BFC /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2928B25A2E3F41AF00B35BFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B2962E3F41AF00B35BFC /* ViewController.swift in Sources */,
+				2928B2622E3F41AF00B35BFC /* AppDelegate.swift in Sources */,
+				2928B2642E3F41AF00B35BFC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B26C2E3F41AF00B35BFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B2972E3F41AF00B35BFC /* ViewController.swift in Sources */,
+				2928B2732E3F41AF00B35BFC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B2792E3F41AF00B35BFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B29A2E3F41AF00B35BFC /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2928B2832E3F41AF00B35BFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2928B29B2E3F41AF00B35BFC /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2928B2802E3F41AF00B35BFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2928B27C2E3F41AF00B35BFC /* anno Extension (iOS) */;
+			targetProxy = 2928B27F2E3F41AF00B35BFC /* PBXContainerItemProxy */;
+		};
+		2928B28A2E3F41AF00B35BFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2928B2862E3F41AF00B35BFC /* anno Extension (macOS) */;
+			targetProxy = 2928B2892E3F41AF00B35BFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2928B2512E3F41AE00B35BFC /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2928B2522E3F41AE00B35BFC /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		2928B2652E3F41AF00B35BFC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2928B2662E3F41AF00B35BFC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2928B2682E3F41AF00B35BFC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2928B2692E3F41AF00B35BFC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2928B2742E3F41AF00B35BFC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2928B2752E3F41AF00B35BFC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2928B29C2E3F41AF00B35BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2928B29D2E3F41AF00B35BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		2928B29F2E3F41AF00B35BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "anno Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno.Extension;
+				PRODUCT_NAME = "anno Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2928B2A02E3F41AF00B35BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "anno Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno.Extension;
+				PRODUCT_NAME = "anno Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2928B2A32E3F41AF00B35BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = anno;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno;
+				PRODUCT_NAME = anno;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2928B2A42E3F41AF00B35BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = anno;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno;
+				PRODUCT_NAME = anno;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2928B2A62E3F41AF00B35BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/anno.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BXTK73VQ5E;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "anno Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno.Extension;
+				PRODUCT_NAME = "anno Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2928B2A72E3F41AF00B35BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/anno.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BXTK73VQ5E;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "anno Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno.Extension;
+				PRODUCT_NAME = "anno Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2928B2AA2E3F41AF00B35BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/anno.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BXTK73VQ5E;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = anno;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno;
+				PRODUCT_NAME = anno;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2928B2AB2E3F41AF00B35BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/anno.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BXTK73VQ5E;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = anno;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.anno.anno;
+				PRODUCT_NAME = anno;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2928B24E2E3F41AE00B35BFC /* Build configuration list for PBXProject "anno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2928B29C2E3F41AF00B35BFC /* Debug */,
+				2928B29D2E3F41AF00B35BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2928B29E2E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2928B29F2E3F41AF00B35BFC /* Debug */,
+				2928B2A02E3F41AF00B35BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2928B2A22E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2928B2A32E3F41AF00B35BFC /* Debug */,
+				2928B2A42E3F41AF00B35BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2928B2A52E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2928B2A62E3F41AF00B35BFC /* Debug */,
+				2928B2A72E3F41AF00B35BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2928B2A92E3F41AF00B35BFC /* Build configuration list for PBXNativeTarget "anno (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2928B2AA2E3F41AF00B35BFC /* Debug */,
+				2928B2AB2E3F41AF00B35BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2928B24B2E3F41AE00B35BFC /* Project object */;
+}
