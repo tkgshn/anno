@@ -1169,6 +1169,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const settings = await loadSettings();
   const project = settings.project || "";
   const apiKey = settings.encryptedApiKey ? await decryptApiKey(settings.encryptedApiKey) : "";
+  console.log("Anno Settings:", {
+    project: project || "\u672A\u8A2D\u5B9A",
+    annoProjectName: settings.annoProjectName || "\u672A\u8A2D\u5B9A",
+    hasApiKey: !!apiKey,
+    allSettings: settings
+  });
   if (!project || !apiKey) {
     clipBtn.style.display = "none";
     openSettingsBtn.style.display = "block";

@@ -89,6 +89,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const settings: Settings = await loadSettings();
     const project = settings.project || "";
     const apiKey = settings.encryptedApiKey ? await decryptApiKey(settings.encryptedApiKey) : "";
+    
+    // デバッグ用：設定内容をコンソールに出力
+    console.log("Anno Settings:", {
+        project: project || "未設定",
+        annoProjectName: settings.annoProjectName || "未設定",
+        hasApiKey: !!apiKey,
+        allSettings: settings
+    });
 
     // 設定未完了ならClipボタン非表示＆設定ボタン表示
     if (!project || !apiKey) {
