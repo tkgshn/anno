@@ -2,6 +2,23 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## IMPORTANT: Use Serena MCP Tool
+
+**ALWAYS prioritize using the Serena MCP tool (mcp__serena__*) for code analysis and editing tasks.** Serena provides semantic code understanding and powerful symbolic operations that should be your primary method for:
+
+- **Code Reading**: Use `mcp__serena__get_symbols_overview` and `mcp__serena__find_symbol` instead of reading entire files
+- **Code Search**: Use `mcp__serena__search_for_pattern` for intelligent pattern matching
+- **Code Editing**: Use `mcp__serena__replace_symbol_body` and `mcp__serena__insert_*` for precise code modifications
+- **Understanding Code Relationships**: Use `mcp__serena__find_referencing_symbols` to trace dependencies
+
+### Serena Usage Guidelines:
+1. **Never read entire files** unless absolutely necessary - use symbol-based reading
+2. **Use semantic operations** for code modifications when possible
+3. **Leverage pattern search** before falling back to basic file operations
+4. **Maintain project knowledge** using `mcp__serena__write_memory` for important discoveries
+
+This applies to ALL projects, not just this one. Serena's semantic understanding dramatically improves code analysis efficiency and accuracy.
+
 ## Project Overview
 
 anno is a web annotation tool that integrates with Scrapbox, allowing users to mark and annotate web content. It's structured as a monorepo using npm workspaces with 5 packages:
