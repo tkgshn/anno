@@ -279,23 +279,27 @@ async function handleOpenTab(
   
   await withErrorHandling(
     async () => {
-      // Always create a new tab for clipping
-      // This prevents overwriting existing Scrapbox pages
-      const [activeTab] = await browser.tabs.query({ active: true, currentWindow: true });
+      // Try to find existing Scrapbox tab
+      const tabs = await browser.tabs.query({ url: "https://scrapbox.io/*" });
       
-      // Create new tab next to the current tab if possible
-      const createOptions: browser.tabs.CreateProperties = {
-        url: message.url,
-        active: true
-      };
-      
-      // If we have an active tab, create the new tab next to it
-      if (activeTab?.index !== undefined) {
-        createOptions.index = activeTab.index + 1;
+      if (tabs.length > 0 && tabs[0].id) {
+        // Update existing Scrapbox tab
+        await browser.tabs.update(tabs[0].id, {
+          url: message.url,
+          active: true
+        });
+        
+        // Focus the window containing the tab
+        if (tabs[0].windowId) {
+          await browser.windows.update(tabs[0].windowId, { focused: true });
+        }
+      } else {
+        // Create new tab
+        await browser.tabs.create({
+          url: message.url,
+          active: true
+        });
       }
-      
-      await browser.tabs.create(createOptions);
-      console.log("[background] Created new Scrapbox tab");
     },
     "Open Scrapbox tab"
   );
