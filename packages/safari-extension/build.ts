@@ -65,16 +65,8 @@ async function buildJavaScriptFiles() {
     { entryPoints: ["src/popup.ts"], outfile: "dist/popup.js" },
   ];
 
-  // First, bundle webextension-polyfill
-  log("Building polyfill bundle...");
-  await esbuild.build({
-    entryPoints: ["../../node_modules/webextension-polyfill/dist/browser-polyfill.js"],
-    outfile: "dist/browser-polyfill.js",
-    bundle: true,
-    format: "iife",
-    globalName: "browser",
-    minify: true,
-  });
+  // Skip polyfill - Safari has native browser API
+  log("Using native browser API (no polyfill needed)");
 
   const results = await Promise.allSettled(
     entries.map(async (options) => {
@@ -96,7 +88,7 @@ async function buildJavaScriptFiles() {
           ".tsx": "tsx",
           ".ts": "ts",
         },
-        inject: ["src/browser-polyfill.ts"],
+        // Browser polyfill is handled directly in the code
         logLevel: "warning",
       });
       const time = Date.now() - start;

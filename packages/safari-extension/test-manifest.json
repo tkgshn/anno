@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Anno Test",
+  "version": "1.0.0",
+  "description": "Test version of Anno Safari extension",
+  
+  "background": {
+    "service_worker": "test-background.js",
+    "persistent": false
+  },
+  
+  "action": {
+    "default_title": "Anno Test - Click me!"
+  },
+  
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  
+  "icons": {
+    "128": "anno.png"
+  }
+}

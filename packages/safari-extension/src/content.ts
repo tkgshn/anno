@@ -113,9 +113,17 @@ function initializeStyles(): void {
 
 // Mark selected text
 const mark = async (): Promise<void> => {
+  console.log("[content] mark() called");
+  console.log("[content] prevInjectionData:", prevInjectionData);
+  
   if (!prevInjectionData) {
     console.warn("[content] No injection data available for marking");
-    return;
+    // Create default injection data with fixed project name
+    prevInjectionData = {
+      annoProjectName: "tkgshn-private",
+      pageRecord: {}
+    };
+    console.log("[content] Created default injection data");
   }
 
   await withErrorHandling(async () => {
@@ -222,6 +230,13 @@ const write = async ({
   const selection = getSelection();
   const isSelected =
     selection && !selection.isCollapsed && selection.rangeCount >= 1;
+  
+  console.log("[content] write() - selection:", {
+    isSelected,
+    isCollapsed: selection?.isCollapsed,
+    rangeCount: selection?.rangeCount,
+    selectedText: isSelected ? selection.toString() : null
+  });
     
   if (isSelected) {
     const range = selection.getRangeAt(0);
@@ -252,14 +267,18 @@ const write = async ({
     );
   }
 
+  const scrapboxUrl = `https://scrapbox.io/${encodeURIComponent(
+    annopageLink.projectName
+  )}/${encodeURIComponent(annopageLink.title)}?${new URLSearchParams({
+    body: lines.join("\n"),
+    followRename: "true",
+  })}`;
+  
+  console.log("[content] Opening Scrapbox URL:", scrapboxUrl);
+  
   const openMessage: ContentToBackgroundMessage = {
-    type: "URL_CHANGED",
-    url: `https://scrapbox.io/${encodeURIComponent(
-      annopageLink.projectName
-    )}/${encodeURIComponent(annopageLink.title)}?${new URLSearchParams({
-      body: lines.join("\n"),
-      followRename: "true",
-    })}`,
+    type: "OPEN_TAB",
+    url: scrapboxUrl,
   };
   
   await browser.runtime.sendMessage(openMessage);
@@ -604,6 +623,10 @@ const mutationObserver = new MutationObserver(handleDocumentChange);
 
 // Initialize on load
 function initialize(): void {
+  console.log("[content] Initializing anno content script...");
+  console.log("[content] Current URL:", window.location.href);
+  console.log("[content] Browser API available:", typeof browser !== 'undefined');
+  
   initializeStyles();
   handleDocumentChange();
   
@@ -623,6 +646,8 @@ function initialize(): void {
     () => browser.runtime.sendMessage(pageLoadedMessage),
     "Send page loaded"
   );
+  
+  console.log("[content] Initialization complete");
 }
 
 // Keyboard shortcut handler

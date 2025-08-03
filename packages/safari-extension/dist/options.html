@@ -1,18 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>anno options</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .status-box {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+      }
+      .info-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        background: #f8f9fa;
+        border-radius: 4px;
+      }
+      .label {
+        font-weight: 600;
+        color: #666;
+        margin-right: 10px;
+      }
+      .value {
+        color: #333;
+        font-family: monospace;
+      }
+      .success {
+        color: #4CAF50;
+      }
+      .warning {
+        color: #ff9800;
+      }
+    </style>
   </head>
 
   <body>
-    <h1>anno options</h1>
-    <p>Please set up before using anno.</p>
-
-    <div>
-      Scrapbox project name to read and write annodata<br />
-      <input id="anno-project-name-input" />
+    <h1>anno Settings</h1>
+    
+    <div class="status-box">
+      <h2>Current Configuration</h2>
+      <div class="info-item">
+        <span class="label">Scrapbox Project:</span>
+        <span class="value" id="project-name">Loading...</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Status:</span>
+        <span id="status" class="value">Checking...</span>
+      </div>
+      <div class="info-item">
+        <span class="label">API Key:</span>
+        <span id="api-status" class="value">Not configured</span>
+      </div>
     </div>
 
-    <script type="module" src="dist/options.js"></script>
+    <div class="status-box">
+      <h2>About</h2>
+      <p>This extension is configured to save annotations to the Scrapbox project: <strong>tkgshn-private</strong></p>
+      <p>To use the AI summary feature, you'll need to add an OpenAI API key in a future update.</p>
+    </div>
+
+    <script type="module" src="options.js"></script>
   </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anno Popup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: sans-serif; margin: 16px; min-width: 220px; }
+    button { margin-top: 16px; width: 100%; }
+    #feedback { margin-top: 8px; color: #888; }
+  </style>
+</head>
+<body>
+  <form id="clip-form">
+    <button type="submit" id="clip-btn">Clip</button>
+    <button type="button" id="open-settings-btn" style="display:none;">設定してください</button>
+  </form>
+  <div id="feedback"></div>
+  <script type="module" src="dist/popup.js"></script>
+</body>
+</html>

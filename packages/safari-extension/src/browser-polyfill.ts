@@ -1,5 +1,4 @@
 // Browser API compatibility layer with Safari-specific enhancements
-import browserPolyfill from "webextension-polyfill";
 
 // Type for Safari-specific properties
 interface SafariExtensions {
@@ -7,18 +6,60 @@ interface SafariExtensions {
   _isIOS?: boolean;
 }
 
-// Create a type that combines browser API with Safari extensions
-type SafariBrowserAPI = typeof browserPolyfill & SafariExtensions;
-
-// Export the browser API with proper typing
-export const browser: SafariBrowserAPI = (() => {
-  const api = browserPolyfill as SafariBrowserAPI;
+// Create a browser API wrapper
+export const browser = (() => {
+  // Use native browser API if available (Safari)
+  if (typeof (globalThis as any).browser !== 'undefined') {
+    const api = (globalThis as any).browser;
+    
+    // Add Safari detection properties
+    api._isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    api._isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+    
+    return api;
+  }
   
-  // Detect Safari
-  api._isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  api._isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+  // Use chrome API if available (Chrome/Edge)
+  if (typeof (globalThis as any).chrome !== 'undefined' && (globalThis as any).chrome.runtime) {
+    const api = (globalThis as any).chrome;
+    
+    // Add Safari detection properties (will be false)
+    api._isSafari = false;
+    api._isIOS = false;
+    
+    return api;
+  }
   
-  return api;
+  // If neither is available, we're in a bad state
+  console.error("No browser extension API found!");
+  
+  // Return a minimal mock to prevent crashes
+  return {
+    _isSafari: /^((?!chrome|android).)*safari/i.test(navigator.userAgent),
+    _isIOS: /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream,
+    runtime: {
+      onMessage: { addListener: () => {} },
+      sendMessage: () => Promise.resolve(),
+      getURL: (path: string) => path
+    },
+    storage: {
+      sync: {
+        get: () => Promise.resolve({}),
+        set: () => Promise.resolve()
+      },
+      local: {
+        get: () => Promise.resolve({}),
+        set: () => Promise.resolve()
+      }
+    },
+    action: {
+      onClicked: { addListener: () => {} }
+    },
+    tabs: {
+      sendMessage: () => Promise.resolve(),
+      query: () => Promise.resolve([])
+    }
+  } as any;
 })();
 
 // Also export as chrome for compatibility
@@ -97,8 +138,8 @@ export const safariCompat = {
 // Make browser API available globally if needed
 declare global {
   interface Window {
-    browser?: typeof browserPolyfill;
-    chrome?: typeof browserPolyfill;
+    browser?: any;
+    chrome?: any;
   }
 }
 

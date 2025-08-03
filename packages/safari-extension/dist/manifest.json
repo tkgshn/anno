@@ -3,18 +3,24 @@
   "version": "6.0.19",
   "manifest_version": 3,
   "description": "Marker for web with Scrapbox. ",
-  "action": {},
+  "action": {
+    "default_icon": {
+      "128": "anno.png",
+      "512": "anno-512.png",
+      "1024": "anno-1024.png"
+    }
+  },
   "background": { 
-    "service_worker": "dist/background.js",
+    "service_worker": "background.js",
     "persistent": false
   },
   "commands": {
     "_execute_action": { "suggested_key": { "default": "Alt+N" } }
   },
   "content_scripts": [
-    { "matches": ["<all_urls>"], "js": ["dist/content.js"] },
-    { "matches": ["https://*.gyazo.com/*"], "js": ["dist/gyanno.js"] },
-    { "matches": ["https://scrapbox.io/*"], "js": ["dist/scrapboxContent.js"] }
+    { "matches": ["<all_urls>"], "js": ["content.js"] },
+    { "matches": ["https://*.gyazo.com/*"], "js": ["gyanno.js"] },
+    { "matches": ["https://scrapbox.io/*"], "js": ["scrapboxContent.js"] }
   ],
   "externally_connectable": { "matches": ["https://scrapbox.io/*"] },
   "icons": { 
@@ -27,7 +33,7 @@
   "web_accessible_resources": [
     {
       "matches": ["https://scrapbox.io/*"],
-      "resources": ["dist/scrapboxUserScript.js"]
+      "resources": ["scrapboxUserScript.js"]
     },
     { "matches": ["<all_urls>"], "resources": ["annotation.html"] }
   ],

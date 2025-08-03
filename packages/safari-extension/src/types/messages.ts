@@ -16,7 +16,8 @@ export type ContentToBackgroundMessage =
   | { type: "SELECTION_MARKED"; selection: SelectionData }
   | { type: "ANNOTATION_CLICKED"; annotationId: string }
   | { type: "ERROR"; error: ErrorInfo }
-  | { type: "URL_CHANGED"; url: string; prevInjectionData?: InjectionData };
+  | { type: "URL_CHANGED"; url: string; prevInjectionData?: InjectionData }
+  | { type: "OPEN_TAB"; url: string };
 
 // External messages (from Scrapbox)
 export type ExternalMessage =

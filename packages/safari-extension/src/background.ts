@@ -1,5 +1,5 @@
 import { browser, safariCompat } from "./browser-polyfill";
-import { loadSettings, cleanupStorage } from "./storage";
+import { loadSettings, saveSettings, cleanupStorage } from "./storage";
 import {
   clearScrapboxLoaderCache,
   fetchAnnopages,
@@ -23,6 +23,9 @@ const FETCH_QUEUE_INTERVAL = 5000; // 5 seconds
 const FETCH_QUEUE_CAP = 5;
 const ERROR_RETRY_DELAY = 1000; // 1 second
 const MAX_RETRIES = 3;
+
+// 固定のプロジェクト名
+const FIXED_PROJECT_NAME = "tkgshn-private";
 
 // Queue for rate limiting fetch requests
 const fetchQueue = new PQueue({
@@ -86,24 +89,24 @@ async function withErrorHandling<T>(
 
 // Mark selection in the current tab
 async function markSelection(tabId: number): Promise<void> {
-  const settings = await loadSettings();
-  
-  if (!settings.annoProjectName) {
-    console.log("[background] No project name set, opening options page");
-    await safariCompat.openOptionsPage();
-    return;
-  }
+  // プロジェクト名は固定値を使用
+  await ensureProjectSettings();
   
   const message: BackgroundToContentMessage = { type: "MARK_SELECTION" };
   await browser.tabs.sendMessage(tabId, message);
 }
 
 // Handle browser action click
+console.log("[background] Setting up action click handler...");
 browser.action.onClicked.addListener(async (tab) => {
+  console.log("[background] Action clicked! Tab:", tab);
+  
   if (typeof tab.id !== "number") {
     console.error("[background] Invalid tab ID");
     return;
   }
+  
+  console.log("[background] Processing click for tab:", tab.id);
   
   await withErrorHandling(
     () => markSelection(tab.id!),
@@ -142,6 +145,9 @@ browser.runtime.onMessage.addListener(
         
       case "PING":
         return Promise.resolve({ pong: true });
+        
+      case "OPEN_TAB":
+        return handleOpenTab(message);
         
       default:
         console.warn("[background] Unknown message type:", (message as any).type);
@@ -206,8 +212,12 @@ async function handleGetStatus(): Promise<ExtensionStatus> {
   const [activeTab] = await browser.tabs.query({ active: true, currentWindow: true });
   
   const status: ExtensionStatus = {
-    isActive: !!settings.annoProjectName,
-    settings,
+    isActive: true, // 常に有効（プロジェクト名は固定）
+    settings: {
+      ...settings,
+      project: FIXED_PROJECT_NAME,
+      annoProjectName: FIXED_PROJECT_NAME
+    },
   };
   
   if (activeTab) {
@@ -261,6 +271,40 @@ async function handleToggleMarking(
   return { isActive: true };
 }
 
+// Handle open tab request
+async function handleOpenTab(
+  message: ContentToBackgroundMessage & { type: "OPEN_TAB" }
+): Promise<void> {
+  console.log("[background] Opening tab with URL:", message.url);
+  
+  await withErrorHandling(
+    async () => {
+      // Try to find existing Scrapbox tab
+      const tabs = await browser.tabs.query({ url: "https://scrapbox.io/*" });
+      
+      if (tabs.length > 0 && tabs[0].id) {
+        // Update existing Scrapbox tab
+        await browser.tabs.update(tabs[0].id, {
+          url: message.url,
+          active: true
+        });
+        
+        // Focus the window containing the tab
+        if (tabs[0].windowId) {
+          await browser.windows.update(tabs[0].windowId, { focused: true });
+        }
+      } else {
+        // Create new tab
+        await browser.tabs.create({
+          url: message.url,
+          active: true
+        });
+      }
+    },
+    "Open Scrapbox tab"
+  );
+}
+
 // Handle collaboration request from Scrapbox
 async function handleCollaborate(
   message: ExternalMessage & { type: "COLLABORATE" },
@@ -278,10 +322,10 @@ async function handleCollaborate(
       
       // Process annolinks and inject
       const injectionData: InjectionData = {
-        annoProjectName: projectName,
+        annoProjectName: FIXED_PROJECT_NAME,
         pageRecord: {},
         collaboratedPage: {
-          projectName,
+          projectName: FIXED_PROJECT_NAME,
           title: pageTitle,
           configs: annolinks
             .map(link => extractAnnolink(link))
@@ -306,12 +350,12 @@ async function handleCollaborate(
 
 // Fetch injection data for a URL
 async function fetchInjectionData(url: string): Promise<InjectionData | null> {
-  const settings = await loadSettings();
-  if (!settings.annoProjectName) return null;
+  // 常に固定のプロジェクト名を使用
+  const projectName = FIXED_PROJECT_NAME;
   
   try {
     const pages = await fetchAnnopages(
-      settings.annoProjectName,
+      projectName,
       { url },
       queuedFetch
     );
@@ -336,7 +380,7 @@ async function fetchInjectionData(url: string): Promise<InjectionData | null> {
       
       if (configs.length > 0) {
         pageRecord[page.title] = {
-          projectName: settings.annoProjectName || "",
+          projectName: projectName,
           title: page.title,
           configs,
         };
@@ -344,7 +388,7 @@ async function fetchInjectionData(url: string): Promise<InjectionData | null> {
     }
     
     return {
-      annoProjectName: settings.annoProjectName || "",
+      annoProjectName: projectName,
       pageRecord,
     };
   } catch (error) {
@@ -394,6 +438,11 @@ async function performStartupCleanup(): Promise<void> {
 // Initialize extension
 async function initialize(): Promise<void> {
   console.log("[background] Initializing Safari extension...");
+  console.log("[background] Browser API available:", typeof browser !== 'undefined');
+  console.log("[background] Action API available:", typeof browser?.action !== 'undefined');
+  
+  // プロジェクト名を固定値で設定
+  await ensureProjectSettings();
   
   await setupContextMenus();
   await performStartupCleanup();
@@ -405,6 +454,22 @@ async function initialize(): Promise<void> {
   }, 30 * 60 * 1000); // 30 minutes
   
   console.log("[background] Initialization complete");
+}
+
+// 設定が常に正しいことを確認する関数
+async function ensureProjectSettings(): Promise<void> {
+  try {
+    const settings = await loadSettings();
+    if (settings.project !== FIXED_PROJECT_NAME || settings.annoProjectName !== FIXED_PROJECT_NAME) {
+      console.log("[background] Setting fixed project name:", FIXED_PROJECT_NAME);
+      await saveSettings({
+        project: FIXED_PROJECT_NAME,
+        annoProjectName: FIXED_PROJECT_NAME
+      });
+    }
+  } catch (error) {
+    console.error("[background] Failed to ensure project settings:", error);
+  }
 }
 
 // Start initialization
