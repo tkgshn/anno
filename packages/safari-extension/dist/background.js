@@ -1764,21 +1764,16 @@ async function handleOpenTab(message) {
   console.log("[background] Opening tab with URL:", message.url);
   await withErrorHandling(
     async () => {
-      const tabs = await browser.tabs.query({ url: "https://scrapbox.io/*" });
-      if (tabs.length > 0 && tabs[0].id) {
-        await browser.tabs.update(tabs[0].id, {
-          url: message.url,
-          active: true
-        });
-        if (tabs[0].windowId) {
-          await browser.windows.update(tabs[0].windowId, { focused: true });
-        }
-      } else {
-        await browser.tabs.create({
-          url: message.url,
-          active: true
-        });
+      const [activeTab] = await browser.tabs.query({ active: true, currentWindow: true });
+      const createOptions = {
+        url: message.url,
+        active: true
+      };
+      if (activeTab?.index !== void 0) {
+        createOptions.index = activeTab.index + 1;
       }
+      await browser.tabs.create(createOptions);
+      console.log("[background] Created new Scrapbox tab");
     },
     "Open Scrapbox tab"
   );
